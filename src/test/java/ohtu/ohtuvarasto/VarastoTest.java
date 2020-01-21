@@ -65,4 +65,69 @@ public class VarastoTest {
         assertEquals(4, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
 
+@Test
+public void eiVoiLisataNegatiivistaMaaraa(){
+    varasto.lisaaVarastoon(-2);
+    
+    assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+}
+  
+
+@Test
+public void josLisataanLiikaaEiSaldoYlitaTilavuutta(){
+    varasto.lisaaVarastoon(20);
+    
+    assertEquals(10, varasto.getSaldo(),vertailuTarkkuus);
+}
+
+@Test
+public void eiVoiOttaaNegatiivistaMaaraa(){
+    varasto.lisaaVarastoon(5);
+    varasto.otaVarastosta(-2);
+    
+    assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
+}
+
+@Test
+public void kaikkiAnnetaanMitaVoidaan(){
+    varasto.lisaaVarastoon(5);
+    varasto.otaVarastosta(7);
+    
+    assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+}
+
+@Test
+public void toStringPalauttaaOikein(){
+    varasto.lisaaVarastoon(5);
+    
+    assertEquals("saldo = 5.0, vielä tilaa 5.0",varasto.toString() );
+    
+}
+@Test
+public void konstruktorissaNegatiivinenTilavuusJolloinTilavuudeksiNolla(){
+    Varasto varasto2=new Varasto(-2);
+
+    assertEquals(0, varasto2.getTilavuus(), vertailuTarkkuus);
+}
+
+@Test
+public void konstruktorissaPosTilavuusAsettaaTilavuudenOikein(){
+    
+Varasto varasto1=new Varasto(10.0,2.0);
+assertEquals(10.0, varasto1.getTilavuus(),vertailuTarkkuus);
+}
+
+@Test
+public void konstruktorissaTilavuusNollaTilavuudeksiAsetetaanNolla(){
+    Varasto varasto1=new Varasto(0.0,2.0);
+assertEquals(0.0, varasto1.getTilavuus(),vertailuTarkkuus);
+    
+}
+
+@Test
+public void konstruktorissaTilavuusNegatiivinenTilavuudeksiAsetetaanNolla(){
+    Varasto varasto1=new Varasto(10.0,-1.0);
+assertEquals(0.0, varasto1.getSaldo(),vertailuTarkkuus);
+    
+}
 }
