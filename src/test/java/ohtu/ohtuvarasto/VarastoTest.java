@@ -107,7 +107,7 @@ public void toStringPalauttaaOikein(){
 public void konstruktorissaNegatiivinenTilavuusJolloinTilavuudeksiNolla(){
     Varasto varasto2=new Varasto(-2);
 
-    assertEquals(-2, varasto2.getTilavuus(), vertailuTarkkuus);
+    assertEquals(0, varasto2.getTilavuus(), vertailuTarkkuus);
 }
 
 @Test
