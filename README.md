@@ -5,4 +5,4 @@
 [![codecov](https://codecov.io/gh/ajnarhi/ohtu-2019-viikko1/branch/master/graph/badge.svg)](https://codecov.io/gh/ajnarhi/ohtu-2019-viikko1)
 
 
-(https://github.com/ajnarhi/ohtu-tehtavat)
+https://github.com/ajnarhi/ohtu-tehtavat
