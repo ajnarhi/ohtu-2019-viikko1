@@ -15,6 +15,7 @@
 <module name="NestedIfDepth">
   <property name="max" value="1"/>
 </module>
+<module name="LeftCurly"/>
 
 
 
